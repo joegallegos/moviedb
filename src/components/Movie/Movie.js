@@ -34,13 +34,16 @@ const Movie = () => {
     };
     fetchData();
   }, [id]);
+
+  if (loading) {
+    return (
+      <div className={styles.spinner}>
+        <Spinner intent="primary" />
+      </div>
+    );
+  }
   return (
     <div className={styles.root}>
-      {loading && (
-        <div className={styles.spinner}>
-          <Spinner intent="primary" />
-        </div>
-      )}
       <Card elevation={Elevation.FOUR} className={styles.movieCard}>
         <div className={styles.movieImage}>
           <img

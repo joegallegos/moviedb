@@ -51,13 +51,17 @@ const HomePage = (id) => {
   const handleClick = () => {
     setOpen({ ...id, show: !open });
   };
+
+  if (loading) {
+    return (
+      <div className={styles.spinner}>
+        <Spinner intent="primary" />
+      </div>
+    );
+  }
+
   return (
     <div className={styles.root}>
-      {loading && (
-        <div className={styles.spinner}>
-          <Spinner intent="primary" />
-        </div>
-      )}
       {movies.map((movie) => (
         <div key={movie.id} className={styles.movie}>
           <Card elevation={Elevation.FOUR} className={styles.movieCard}>
