@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Button, Card, Elevation, Intent } from '@blueprintjs/core';
+import { Button, Card, Elevation, Intent, Spinner } from '@blueprintjs/core';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import styles from './HomePage.module.scss';
@@ -10,8 +10,10 @@ const KEY = process.env.REACT_APP_APIKEY;
 const HomePage = (id) => {
   const [movies, setMovies] = useState([]);
   const [open, setOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const fetchData = () => {
+    setLoading(true);
     axios
       .get(`https://api.themoviedb.org/3/movie/popular?api_key=${KEY}`)
       .then((res) => {
@@ -35,6 +37,7 @@ const HomePage = (id) => {
           };
         });
         setMovies(response);
+        setLoading(false);
       })
       .catch((err) => {
         console.log('error', err);
@@ -48,9 +51,13 @@ const HomePage = (id) => {
   const handleClick = () => {
     setOpen({ ...id, show: !open });
   };
-
   return (
     <div className={styles.root}>
+      {loading && (
+        <div className={styles.spinner}>
+          <Spinner intent="primary" />
+        </div>
+      )}
       {movies.map((movie) => (
         <div key={movie.id} className={styles.movie}>
           <Card elevation={Elevation.FOUR} className={styles.movieCard}>
