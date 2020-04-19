@@ -9,7 +9,6 @@ const KEY = process.env.REACT_APP_APIKEY;
 
 const HomePage = (id) => {
   const [movies, setMovies] = useState([]);
-  const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
 
   const fetchData = () => {
@@ -48,10 +47,6 @@ const HomePage = (id) => {
     fetchData();
   }, []);
 
-  const handleClick = () => {
-    setOpen({ ...id, show: !open });
-  };
-
   if (loading) {
     return (
       <div className={styles.spinner}>
@@ -83,7 +78,6 @@ const HomePage = (id) => {
                   type="button"
                   intent={Intent.PRIMARY}
                   text="Details"
-                  onClick={handleClick}
                 />
               </Link>
             </div>
