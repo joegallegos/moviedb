@@ -1,6 +1,7 @@
 {
   "name": "movie-db",
   "version": "0.1.0",
+  "main": "index.js",
   "private": true,
   "dependencies": {
     "@blueprintjs/core": "^3.25.0",
