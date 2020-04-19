@@ -11,7 +11,7 @@ const Header = () => {
   return (
     <Navbar className={styles.root}>
       <NavbarGroup align={Alignment.LEFT}>
-        <NavbarHeading>Movie-DB Lookup</NavbarHeading>
+        <NavbarHeading>Movie-DB</NavbarHeading>
       </NavbarGroup>
     </Navbar>
   );
