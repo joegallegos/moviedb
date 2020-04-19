@@ -68,7 +68,7 @@ const HomePage = (id) => {
               />
             </div>
             <div className={styles.movieInfo}>
-              <div>{movie.title}</div>
+              <div className={styles.movieTitle}>{movie.title}</div>
               <div>Popularity: {movie.popularity}</div>
               <div>Vote Count: {movie.voteCount}</div>
               <div>Release Date: {movie.release}</div>

@@ -37,7 +37,7 @@ const Movie = () => {
   return (
     <div className={styles.root}>
       {loading && (
-        <div>
+        <div className={styles.spinner}>
           <Spinner intent="primary" />
         </div>
       )}

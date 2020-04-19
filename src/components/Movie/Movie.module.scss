@@ -1,14 +1,22 @@
 .root {
+  width: 100%;
+  height: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.spinner {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .movieCard {
   width: 75%;
   display: flex;
   flex-direction: row;
-  margin-top: 30px;
 }
 
 .movieInfo {
