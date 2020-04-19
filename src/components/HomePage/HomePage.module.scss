@@ -1,9 +1,31 @@
 .root {
-  //
+  display: flex;
+  flex-direction: column;
 }
 
 .movie {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: center;
   margin-bottom: 5px;
+}
+
+.movieCard {
+  margin-top: 20px;
+  min-width: 650px;
+  display: flex;
+  flex-direction: row;
+}
+
+.movieInfo {
+  width: 100%;
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.movieButton {
+  margin-top: 10px;
 }
