@@ -29,7 +29,7 @@ const Movie = () => {
           setLoading(false);
         })
         .catch((err) => {
-          console.log('[fetchData]ror', err);
+          console.log('error', err);
         });
     };
     fetchData();
